@@ -1,0 +1,52 @@
+@model dwc.Models.Farmacia
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Farmacia</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Idfarmacia" class="control-label"></label>
+                <input asp-for="Idfarmacia" class="form-control" />
+                <span asp-validation-for="Idfarmacia" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Nombre" class="control-label"></label>
+                <input asp-for="Nombre" class="form-control" />
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Poblacion" class="control-label"></label>
+                <input asp-for="Poblacion" class="form-control" />
+                <span asp-validation-for="Poblacion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Idperiodo" class="control-label"></label>
+                <select asp-for="Idperiodo" class ="form-control" asp-items="ViewBag.Idperiodo"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ultfactura" class="control-label"></label>
+                <input asp-for="Ultfactura" class="form-control" />
+                <span asp-validation-for="Ultfactura" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

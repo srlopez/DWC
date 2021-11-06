@@ -1,0 +1,5 @@
+@{
+    string ctrl = Convert.ToString(Context.Request.RouteValues["Controller"]);
+    Layout = "_Layout";
+    if(ctrl=="MiPag") Layout = "";
+}
